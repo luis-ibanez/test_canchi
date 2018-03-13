@@ -1,14 +1,16 @@
-package ejercicios;
- 
-// @author Pedroken
+
+package prueba3;
 
 import java.util.Scanner;
 
+/**
+ *
+ * @author Pedroken
+ */
+public class Prueba3 {
 
-public class While3 {
-    
     public static void main(String[] args) {
-    int empleados=1,sueldos=0,i=1,n=0,guau=0,suma=0;
+    int empleados,sueldos,i=1,n=0,guau=0,suma=0;
     Scanner curritos = new Scanner(System.in);
     
     System.out.print("Introduce el numero de empleados: ");
@@ -20,8 +22,8 @@ public class While3 {
         suma+=sueldos;
 
     
-        
         i++;
+
 
         if(sueldos>=100&&sueldos<=300){
             n=n+1;       
