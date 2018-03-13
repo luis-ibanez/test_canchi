@@ -16,7 +16,12 @@ public class Ejercicios {
      */
     public static void main(String[] args) {
     	//Tenías un error aquí, te lo he arreglado
+        int i=0;
+        //illegal character me parto
+        double n=∞;
+        while (i<=n){
         System.out.println("Hola Mundo!");
+        }
     }
     
 }
