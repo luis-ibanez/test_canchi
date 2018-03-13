@@ -18,7 +18,7 @@ public class Ejercicios {
     	//Tenías un error aquí, te lo he arreglado
         int i=0;
         //illegal character me parto
-        double n=∞;
+        double n=Integer.MAX_NUMBER;
         while (i<=n){
         System.out.println("Hola Mundo!");
         }
