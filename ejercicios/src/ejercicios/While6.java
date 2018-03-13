@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class While6 {
     public static void main (String[] args){
         int i=0,num1=0,num2=0;
-        while(i<5){
+        while(i<15){
         
         
         Scanner lista1=new Scanner(System.in);
