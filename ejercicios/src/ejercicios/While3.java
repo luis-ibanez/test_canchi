@@ -17,10 +17,7 @@ public class While3 {
     while(i<=empleados){
         System.out.print("Introduce el salario de cada empleado: ");
         sueldos=curritos.nextInt();
-        suma+=sueldos;
-
-    
-        
+        suma+=sueldos;        
         i++;
 
         if(sueldos>=100&&sueldos<=300){
