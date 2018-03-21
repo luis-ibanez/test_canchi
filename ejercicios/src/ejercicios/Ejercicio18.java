@@ -21,7 +21,10 @@ public class Ejercicio18 {
     mes=teclado.nextInt();
     System.out.println("Introduce el año");
     año=teclado.nextInt();
-    if(mes>=1||mes<=3){
+    //if(mes>=1||mes<=3){
+        
+        if(mes==1||mes==2||mes==3){//esto ya va XD
+        
         System.out.println("pertenece al primer trimestre");
         System.out.println("dia:"+dia+" mes:"+mes+" año:"+año);
       
