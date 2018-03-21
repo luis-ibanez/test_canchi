@@ -39,4 +39,4 @@ public class Ejercicio14 {
     }
     
 }
-/**Se cargan por teclado tres números distintos. Mostrar por pantalla el mayor de ellos.**/
+/**1.Se cargan por teclado tres números distintos. Mostrar por pantalla el mayor de ellos.**/
