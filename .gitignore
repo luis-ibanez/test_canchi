@@ -29,3 +29,8 @@ ejercicios/build.xml
 /ejercicios/build/
 /Prueba3/nbproject/private/
 /Prueba3/build/
+.idea/kotlinc.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/modules.xml
+ejercicios/ejercicios.iml
