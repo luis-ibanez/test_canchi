@@ -36,11 +36,37 @@ public class Ejercicio17 {
         System.out.println("Fuera de nivel."+porcentaje+"%");        
             }
     else
-        System.out.println("Hay un error, intentalo de nuevo.");        
+        System.out.println("Con el monton de gente que hay en paro y te toca a ti poner dos numeros.");        
 
         
     }
     
+}
+/**import java.util.Scanner;
+
+public class EstructuraCondicionalAnidada5 {
+    public static void main(String[] ar) {
+        Scanner teclado=new Scanner(System.in);
+        int totalPreguntas,totalCorrectas;
+        System.out.print("Ingrese la cantidad total de preguntas del examen:");
+        totalPreguntas=teclado.nextInt();
+        System.out.print("Ingrese la cantidad total de preguntas contestadas correctamente:");
+        totalCorrectas=teclado.nextInt();
+        int porcentaje=totalCorrectas * 100 / totalPreguntas;
+        if (porcentaje>=90) {
+            System.out.print("Nivel máximo");
+        } else {
+            if (porcentaje>=75) {
+                System.out.print("Nivel medio");
+            } else {
+                if (porcentaje>=50) {
+                    System.out.print("Nivel regular");
+                } else {
+                    System.out.print("Fuera de nivel");
+                }
+            }
+        }
+    } 
 }
 /**4.Un postulante a un empleo, realiza un test de capacitación, se obtuvo la 
  * siguiente información: cantidad total de preguntas que se le realizaron y 
