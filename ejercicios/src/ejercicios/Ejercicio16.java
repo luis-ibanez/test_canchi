@@ -15,7 +15,7 @@ public class Ejercicio16 {
     public static void main(String[] pedroKen){
     Scanner teclado=new Scanner(System.in);
     int num;
-    System.out.println("Introduce un número del 1 al 999");
+    System.out.println("Introduce un número del 1 al 999:");
     num=teclado.nextInt();
     if(num>0&&num<10){
         System.out.println("Tu número tiene una sola cifra.");
