@@ -25,14 +25,15 @@ public class Ejercicio14 {
     System.out.print("Introduce el tercer número: ");
     num3=teclado.nextInt();
     
-    if(num1>num2&&num1>num3)
+    if(num1>num2&&num1>num3){
         System.out.println("El primer número es el mayor: "+num1);
-    else if (num2>num1&&num2>num3)
+    }
+    else if (num2>num1&&num2>num3){
         System.out.println("El segundo número es el mayor: "+num2);
-    //if(num3>num1&&num3>num2) 
-    else
+    }
+    else{
         System.out.println("El tercer número es el mayor: "+num3);
-                
+    }       
             
     
     }
