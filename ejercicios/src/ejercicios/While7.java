@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class While7 {
     public static void main(String[] args) {
 
-        int i = 1, num, valor = 0, impar = 0, par = 0, nd = 0;
+        int i = 1, num, valor = 0, impar = 0, par = 0;
 
         Scanner operador = new Scanner(System.in);
 
