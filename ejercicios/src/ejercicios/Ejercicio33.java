@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ejercicio33 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int lado1, lado2, lado3, f, suma, equilátero = 0, isósceles = 0, escaleno = 0, num1 = 0, num2 = 0 , num3 = 0;
+        int lado1, lado2, lado3, f, suma, equilátero = 0, isósceles = 0, escaleno = 0, num1 = 0, num2 = 0, num3 = 0;
         System.out.print("Introduce el numero de triangulos: ");
         suma = teclado.nextInt();
         for (f = 1; f <= suma; f++) {
@@ -17,29 +17,28 @@ public class Ejercicio33 {
             lado3 = teclado.nextInt();
             if (lado1 == lado2 && lado1 == lado3) {
                 System.out.println("El triangulo es equilátero.");
-                 num1 = teclado.nextInt();
+                num1 = teclado.nextInt();
                 equilátero++;
             } else if (lado1 != lado2 && lado1 != lado3) {
                 System.out.println("El triangulo es escaleno.");
-                 num2= teclado.nextInt();
+                num2 = teclado.nextInt();
                 escaleno++;
             } else {
                 System.out.println("El triangulo es isósceles.");
-                 num3 = teclado.nextInt();
+                num3 = teclado.nextInt();
                 isósceles++;
             }
         }
         System.out.println("Triangulos equiláteros: " + equilátero);
         System.out.println("Triangulos isósceles: " + isósceles);
         System.out.println("Triangulos escaleno: " + escaleno);
-        if (equilátero < isósceles && equilátero < escaleno){
+        if (equilátero < isósceles && equilátero < escaleno) {
             System.out.println("Tipo de triángulo que posee menor cantidad es el equilátero.");
         }
-        if (isósceles < escaleno && isósceles < equilátero){
+        if (isósceles < escaleno && isósceles < equilátero) {
             System.out.println("Tipo de triángulo que posee menor cantidad es el isósceles.");
 
-        }
-        if (escaleno < isósceles && escaleno < equilátero){
+        } else {
             System.out.println("Tipo de triángulo que posee menor cantidad es el escaleno.");
 
         }
