@@ -32,7 +32,7 @@ public class Ejercicio34 {
         System.out.println("los puntos en el cuadrante 4 son : " + cu4);
     }
 }
-/*Escribir un programa que pida ingresar coordenadas (x,y) que representan
+/*6.Escribir un programa que pida ingresar coordenadas (x,y) que representan
  puntos en el plano.
 Informar cuántos puntos se han ingresado en el primer, segundo, tercer y cuarto
 cuadrante. Al comenzar el programa se pide que se ingrese la cantidad de puntos

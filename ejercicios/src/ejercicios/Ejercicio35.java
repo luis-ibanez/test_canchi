@@ -28,7 +28,7 @@ public class Ejercicio35 {
         System.out.println("valores multiplos de 15: " + multi);
     }
 }
-/*Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:
+/*7.Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:
 a) La cantidad de valores ingresados negativos.
 b) La cantidad de valores ingresados positivos.
 c) La cantidad de múltiplos de 15.
