@@ -19,7 +19,7 @@ public class Ejercicio33 {
                 System.out.println("El triangulo es equilátero.");
                 num1 = teclado.nextInt();
                 equilátero++;
-            } else if (lado1 != lado2 && lado1 != lado3) {
+            } else if (lado1 != lado2 && lado1 != lado3 && lado2 != lado3) {
                 System.out.println("El triangulo es escaleno.");
                 num2 = teclado.nextInt();
                 escaleno++;
