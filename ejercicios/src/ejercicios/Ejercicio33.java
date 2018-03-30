@@ -5,9 +5,13 @@ import java.util.Scanner;
 public class Ejercicio33 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int lado1, lado2, lado3, f, suma, equilátero = 0, isósceles = 0, escaleno = 0, num1 = 0, num2 = 0, num3 = 0;
+
+        int lado1, lado2, lado3, f, suma, equilátero = 0, isósceles = 0,
+                escaleno = 0, num1 , num2 , num3 ;
+
         System.out.print("Introduce el numero de triangulos: ");
         suma = teclado.nextInt();
+
         for (f = 1; f <= suma; f++) {
             System.out.print("Introduce el primer lado: ");
             lado1 = teclado.nextInt();
@@ -15,6 +19,7 @@ public class Ejercicio33 {
             lado2 = teclado.nextInt();
             System.out.print("Introduce el tercer lado: ");
             lado3 = teclado.nextInt();
+
             if (lado1 == lado2 && lado1 == lado3) {
                 System.out.println("El triangulo es equilátero.");
                 num1 = teclado.nextInt();
@@ -29,9 +34,11 @@ public class Ejercicio33 {
                 isósceles++;
             }
         }
+
         System.out.println("Triangulos equiláteros: " + equilátero);
         System.out.println("Triangulos isósceles: " + isósceles);
         System.out.println("Triangulos escaleno: " + escaleno);
+
         if (equilátero < isósceles && equilátero < escaleno) {
             System.out.println("Tipo de triángulo que posee menor cantidad es el equilátero.");
         }
