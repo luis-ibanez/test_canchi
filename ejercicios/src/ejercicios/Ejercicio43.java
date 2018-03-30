@@ -11,13 +11,14 @@ public class Ejercicio43 {
         System.out.println("Introduce el nombre de la primera persona: ");
         nom1 = teclado.nextLine();
         //si quitas de aqui la segunda persona y la pones abajo no hace la pregunta?????
-        System.out.println("Introduce el nombre de la segunda persona: ");
-        nom2 = teclado.nextLine();
+       // System.out.println("Introduce el nombre de la segunda persona: ");
+       // nom2 = teclado.nextLine();
         System.out.println("Introduce la edad de la primera persona: ");
         edad1 = teclado.nextInt();
-        //System.out.println("Introduce el nombre de la segunda persona: ");
-        //nom2 = teclado.nextLine();
-
+        System.out.println("Introduce el nombre de la segunda persona: ");
+        //valla la solucion es ponerlo doble esto es brujeria
+        teclado.nextLine();
+        nom2 = teclado.nextLine();
 
         System.out.println("Introduce la edad de la segunda persona: ");
         edad2 = teclado.nextInt();
