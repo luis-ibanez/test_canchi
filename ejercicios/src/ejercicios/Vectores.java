@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Vectores {
     private Scanner teclado;
     private float[] altura = new float[5];
-    private float promedio = 0, altos, bajos;
+    private float promedio = 0, altos, bajos, suma;
     private int i = 1, f;
 
     public void carga() {
@@ -15,12 +15,14 @@ public class Vectores {
 
             System.out.println("Introduce la altura del sujeto " + i + ": ");
             altura[f] = teclado.nextFloat();
+            suma += altura[f];
             i++;
         }
     }
 
     public void comparar() {
-        promedio = (altura[1] +altura[2]+altura[3]+altura[4]+altura[0]) / 5;
+        promedio = suma / 5;
+        //promedio = (altura[1] +altura[2]+altura[3]+altura[4]+altura[0]) / 5;
         for ( f = 0; f < altura.length; f++){
         if (altura[f] > promedio) {
             altos++;
