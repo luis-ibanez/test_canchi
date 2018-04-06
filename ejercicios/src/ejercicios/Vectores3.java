@@ -9,6 +9,8 @@ public class Vectores3 {
     private int [] suma = new int[4];
     private int suma2;
 
+
+
     public void carga(){
         Scanner teclado = new Scanner(System.in);
         int i = 1;
@@ -40,9 +42,10 @@ public class Vectores3 {
         toma.carga();
         toma.operaciones();
         toma.imprimir();
-    }
+
+}
 
     }
-/*Realizar un programa que pida la carga de dos vectores numéricos enteros
+/*2.Realizar un programa que pida la carga de dos vectores numéricos enteros
 de 4 elementos. Obtener la suma de los dos vectores, dicho resultado guardarlo
 en un tercer vector del mismo tamaño. Sumar componente a componente. */

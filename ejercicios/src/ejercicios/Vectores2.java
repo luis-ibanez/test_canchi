@@ -41,7 +41,7 @@ public class Vectores2 {
         elem.imprimir();
     }
 }
-/*Desarrollar un programa que permita ingresar un vector de 8 elementos, e informe:
+/*1.Desarrollar un programa que permita ingresar un vector de 8 elementos, e informe:
 El valor acumulado de todos los elementos del vector.
 El valor acumulado de los elementos del vector que sean mayores a 36.
 Cantidad de valores mayores a 50.*/
