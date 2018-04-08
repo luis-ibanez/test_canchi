@@ -36,8 +36,8 @@ public class VectoresOrdenadosParalelos2 {
 
     }
 
-    public void ImprimirOrdenAlfabetico() {
-        System.out.println("Por orden alfabetico.");
+    public void Imprimir() {
+
         for (int f = 0; f < habitantes.length; f++) {
             System.out.println(pais[f] + " - " + habitantes[f]);
         }
@@ -59,19 +59,16 @@ public class VectoresOrdenadosParalelos2 {
             }
         }
     }
-    public void ImprimirOrdenHabitantes() {
-        System.out.println("Ordenado por habitantes de mayor a menor.");
-        for (int f = 0; f < habitantes.length; f++) {
-            System.out.println(pais[f] + " - " + habitantes[f]);
-        }
-    }
+
     public static void main(String[] args){
         VectoresOrdenadosParalelos2 toma = new VectoresOrdenadosParalelos2();
         toma.carga();
         toma.OrdenPais();
-        toma.ImprimirOrdenAlfabetico();
+        System.out.println("Por orden alfabetico.");
+        toma.Imprimir();
         toma.OrdenPorHabitantes();
-        toma.ImprimirOrdenHabitantes();
+        System.out.println("Ordenado por habitantes de mayor a menor.");
+        toma.Imprimir();
     }
 }
 /*Cargar en un vector los nombres de 5 paises y en otro vector paralelo
