@@ -32,7 +32,7 @@ public class VectoresOrdenados2 {
             System.out.println(paises[f]);
         }
     }
-    
+
     public static void main(String[] args) {
         VectoresOrdenados2 toma = new VectoresOrdenados2();
         toma.carga();
