@@ -8,20 +8,21 @@ public class VectoresOrdenadosParalelos {
     private int[] notas = new int[5];
     private String[] alumnos = new String[5];
 
-    public void carga(){
-        for (int f = 0; f < notas.length; f++){
-            System.out.print("Introduce el nombre del alumno: " );
+    public void carga() {
+        for (int f = 0; f < notas.length; f++) {
+            System.out.print("Introduce el nombre del alumno: ");
             alumnos[f] = teclado.next();
-            System.out.print("Introduce la nota del alumno: " );
+            System.out.print("Introduce la nota del alumno: ");
             notas[f] = teclado.nextInt();
         }
     }
-    public void ordenar(){
-        for (int i = 0; i < notas.length; i++){
-            for (int f = 0; f < notas.length; f++){
+
+    public void ordenar() {
+        for (int i = 0; i < notas.length; i++) {
+            for (int f = 0; f < notas.length; f++) {
                 int temp;
                 String tempo;
-                if (notas[i] > notas[f]){
+                if (notas[i] > notas[f]) {
                     temp = notas[i];
                     notas[i] = notas[f];
                     notas[f] = temp;
@@ -32,12 +33,14 @@ public class VectoresOrdenadosParalelos {
             }
         }
     }
-    public void imprimir(){
+
+    public void imprimir() {
         for (int f = 0; f < notas.length; f++) {
             System.out.println(alumnos[f] + " - " + notas[f]);
         }
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         VectoresOrdenadosParalelos toma = new VectoresOrdenadosParalelos();
         toma.carga();
         toma.ordenar();
