@@ -11,7 +11,7 @@ public class Matriz5 {
     public void carga() {
         System.out.println("Introduce la cantidad de filas: ");
         fila = teclado.nextInt();
-        System.out.println("Introduce la cantidad de coloumnas: ");
+        System.out.println("Introduce la cantidad de columnas: ");
         columna = teclado.nextInt();
         c = columna;
         f = fila;
@@ -34,8 +34,8 @@ public class Matriz5 {
         }
     }
 
-    public void imprimirFila(){
-        for (int columna = 0; columna < c; columna++){
+    public void imprimirFila() {
+        for (int columna = 0; columna < c; columna++) {
             System.out.print(matriz[f - 1][columna] + " ");
             //aki si no le pongo - 1 a f se sale de la grafica y peta ;(
         }
