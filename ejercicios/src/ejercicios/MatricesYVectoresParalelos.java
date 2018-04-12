@@ -30,6 +30,11 @@ public class MatricesYVectoresParalelos {
                 String tempo = empleados[0];
                 empleados[0] = empleados[fila];
                 empleados[fila] = tempo;
+                /*for(int f=0;f<sueldoTotales.length;f++) {
+            if (sueldoTotales[f]>may) {
+                temp=sueldoTotales[f];
+                tempo=empleados[f];
+                esto hace lo mismo pero mas corto*/
             }
 
         }
