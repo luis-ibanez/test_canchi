@@ -31,7 +31,7 @@ public class Matriz4 {
         matriz.imprimirMatriz();
     }
 }
-/*Crear una matriz de 2 filas y 5 columnas. Realizar la carga de componentes
+/*Crear una matriz de 2 filas y 5 columnas. Realizar la cargaMatriz de componentes
  por columna (es decir primero ingresar toda la primer columna, luego la
  segunda columna y así sucesivamente)
 Imprimir luego la matriz.*/

@@ -12,7 +12,7 @@ public class VectorMayorYmenor2 {
         n = teclado.nextInt();
         elementos = new int[n];
         for (int f = 0; f < elementos.length; f++){
-            System.out.print("carga los valores: ");
+            System.out.print("cargaMatriz los valores: ");
             elementos[f] = teclado.nextInt();
         }
     }

@@ -62,7 +62,7 @@ public class MatricesYVectoresParalelos2 {
             }
         }
         System.out.println("El pais con la temperatura mas alta es " + temporal +
-        " con una temperatura media de: " + (mayor / 3));
+                " con una temperatura media de: " + (mayor / 3));
     }
 
     public static void main(String[] args) {

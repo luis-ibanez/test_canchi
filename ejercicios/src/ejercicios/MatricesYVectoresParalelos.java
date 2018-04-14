@@ -64,7 +64,7 @@ Se tiene la siguiente información:
 · Ingresos en concepto de sueldo, cobrado por cada empleado, en los últimos 3 meses.
 Confeccionar el programa para:
 
-a) Realizar la carga de la información mencionada.
+a) Realizar la cargaMatriz de la información mencionada.
 b) Generar un vector que contenga el ingreso acumulado en sueldos en los
  últimos 3 meses para cada empleado.
 c) Mostrar por pantalla el total pagado en sueldos a todos los empleados

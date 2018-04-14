@@ -19,5 +19,5 @@ public class Ejercicio39 {
         System.out.print("El promedio de los números es: " + promedio);
     }
 }
-/*Escribir un programa que solicite la carga de números por teclado, obtener
- su promedio. Finalizar la carga de valores cuando se cargue el valor 0.*/
+/*Escribir un programa que solicite la cargaMatriz de números por teclado, obtener
+ su promedio. Finalizar la cargaMatriz de valores cuando se cargue el valor 0.*/

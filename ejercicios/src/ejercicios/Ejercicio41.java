@@ -14,7 +14,7 @@ public class Ejercicio41 {
         }
         while (num != 9999);
         suma = suma - 9999;
-        System.out.println("A finalizado la carga.");
+        System.out.println("A finalizado la cargaMatriz.");
         System.out.println("El resultado de la suma es de : " + suma);
         if (suma == 0) {
             System.out.println("El resultado de la suma es cero.");
@@ -27,7 +27,7 @@ public class Ejercicio41 {
 }
 /*
     Realizar un programa que acumule (sume) valores ingresados por teclado hasta
-     ingresar el 9999 (no sumar dicho valor, indica que ha finalizado la carga).
+     ingresar el 9999 (no sumar dicho valor, indica que ha finalizado la cargaMatriz).
 
      Imprimir el valor acumulado e informar si dicho valor es cero, mayor a cero
      o menor a cero.
