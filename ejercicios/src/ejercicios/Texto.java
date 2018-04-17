@@ -9,9 +9,9 @@ public class Texto {
         String nombre1, nombre2;
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduce el primer nombre: ");
-        nombre1 = teclado.next();
-        System.out.println("Introduce el primer nombre: ");
-        nombre2 = teclado.next();
+        nombre1 = teclado.nextLine();
+        System.out.println("Introduce el segundo nombre: ");
+        nombre2 = teclado.nextLine();
         if (nombre1.equals(nombre2)) {
             System.out.println("Son iguales: " + nombre1 + ", " + nombre2);
         } else {
