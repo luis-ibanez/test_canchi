@@ -25,13 +25,17 @@ public class Texto3 {
 
     public void ponerNombreYSaleCorreo() {
         System.out.println("Introduce el nombre a buscar: ");
+        comprobar = teclado.nextLine();/*al poner esto dentro del for salia bien en la primera
+        comprobacion y en  la segunda se queda en blanco y por eso se paraba*/
         for (int fila = 0; fila < 5; fila++) {
-            comprobar = teclado.nextLine();
+
             //aquí tambien he probado con un "if" y tambien se detiene
             //funciona pero se para
-            while (comprobar.equalsIgnoreCase(nombres[fila])) {
+            System.out.println("El valor de comprobar: " + comprobar);
+            System.out.println("El valor de nombres: " + nombres[fila]);
+            if (comprobar.equalsIgnoreCase(nombres[fila])) {
                 System.out.println("Nombre: " + nombres[fila] + ". Y su correo es: " + correo[fila]);
-             break;
+
             }
         }
     }
