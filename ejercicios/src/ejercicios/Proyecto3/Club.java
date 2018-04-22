@@ -11,7 +11,17 @@ public class Club {
     public void mayorAntiguedad() {
 
         if (socio1.getAntiguedad() > socio2.getAntiguedad() && socio1.getAntiguedad() > socio3.getAntiguedad()) {
+            System.out.println("El socio que tiene mas antiguedad es: " + socio1.getNombre());
+            System.out.println("Y " + socio1.getNombre() + " tiene " + socio1.getAntiguedad() + " años en el Club.");
 
+        }
+        else if (socio2.getAntiguedad() > socio3.getAntiguedad()) {
+            System.out.println("El socio que tiene mas antiguedad es: " + socio2.getNombre());
+            System.out.println("Y " + socio2.getNombre() + " tiene " + socio2.getAntiguedad() + " años en el Club.");
+
+        } else {
+            System.out.println("El socio que tiene mas antiguedad es: " + socio3.getNombre());
+            System.out.println("Y " + socio3.getNombre() + " tiene " + socio3.getAntiguedad() + " años en el Club.");
         }
     }
 
