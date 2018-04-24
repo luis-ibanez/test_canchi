@@ -7,6 +7,7 @@ public class Pila {
         Nodo sig; // se crea el puntero que marca al siguiente Nodo
     }
 
+
     private Nodo raiz; // se crea el puntero que marca la primera casilla del Nodo
 
     public Pila() {
@@ -35,7 +36,9 @@ public class Pila {
             return Integer.MAX_VALUE;
         }
     }
+
     public void imprimir() {//creamos metodo repetitivo para poder imprimir la lista completa
+
         Nodo reco = raiz;//definimos variable local para que apunte a la primera casilla de la lista
         System.out.println("Listado de todos los elementos de la pila.");
         while (reco != null) {//mientra que la lista no este vacia
@@ -45,14 +48,37 @@ public class Pila {
         System.out.println();
     }
 
+    public void cantidadDeNodos() {
+        int contador = 0; //para contar el numero de nodos que tiene la pila
+        Nodo reco = raiz;
+        while (reco != null) { //metodo para recorrer todo el nodo
+            reco = reco.sig;
+            contador++;   // cada vez lo recorre se suma un contador
+        }
+        System.out.println("El numero de nodos es de: " + contador);
+    }
+
+    public void siLaListaEstaVacia() {
+        int contador = 0; //lo mismo que el metodo anterior
+        Nodo reco = raiz;
+        while (reco != null) {
+            reco = reco.sig;
+            contador++;
+        }
+        if (contador == 0)  // si no se llega a sumar nada el nodo esta vacio
+        System.out.println("El nodo esta vacio");
+    }
+
     public static void main(String[] args) {
         Pila pila1 = new Pila();
         pila1.insertar(10);//insertar numeros
         pila1.insertar(40);
         pila1.insertar(3);
         pila1.imprimir();
-        System.out.println("Extraemos de la pila:"+pila1.extraer());//extraer numeros
+        System.out.println("Extraemos de la pila:" + pila1.extraer());//extraer numeros
         pila1.imprimir();
+        pila1.cantidadDeNodos();
+        pila1.siLaListaEstaVacia();
     }
 
 }
