@@ -66,7 +66,14 @@ public class Pila {
             contador++;
         }
         if (contador == 0)  // si no se llega a sumar nada el nodo esta vacio
-        System.out.println("El nodo esta vacio");
+            System.out.println("El nodo esta vacio");
+    }
+
+    public void imprimirPrimerNodoDeLaPila() {
+        Nodo reco = raiz;
+        reco = reco.sig;
+        System.out.println("Primer número de la pila: " + reco.info);
+        System.out.println("Ultimo número de la pila: " + raiz.info);
     }
 
     public static void main(String[] args) {
@@ -74,6 +81,7 @@ public class Pila {
         pila1.insertar(10);//insertar numeros
         pila1.insertar(40);
         pila1.insertar(3);
+        pila1.imprimirPrimerNodoDeLaPila();
         pila1.imprimir();
         System.out.println("Extraemos de la pila:" + pila1.extraer());//extraer numeros
         pila1.imprimir();
@@ -88,7 +96,11 @@ Confeccionar una clase que administre una lista tipo pila (se debe poder
  insertar, extraer e imprimir los datos de la pila)
  Problema 2:
 
-Agregar a la clase Pila un método que retorne la cantidad de nodos y otro que indique si esta vacía.*/
+Agregar a la clase Pila un método que retorne la cantidad de nodos y otro que indique si esta vacía.
+Problemas propuestos
+
+Agregar un método a la clase Pila que retorne la información del primer nodo de la Pila sin borrarlo.
+*/
 
 
 
