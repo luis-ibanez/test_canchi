@@ -53,9 +53,13 @@ class OtraForma {
         }
 
         if (pila.empty()) {
+            System.out.println("esta de lujo campeon.");
             return true;
+
         } else {
+            System.out.println("Pero que mierda es esto.");
             return false;
+
         }
 
     }

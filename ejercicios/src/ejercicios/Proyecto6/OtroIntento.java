@@ -49,19 +49,20 @@ public class OtroIntento {
         }
     }
 
-    public void primerIntentoParentesis() {
-        int largo = caracteres.length();
-        char c = '*';
-        int i = 0;
-        while (i < largo){
-            if (c == '(' || c == '[' || c == '{') {
-              //  raiz.push(1);
+    public void primerIntentoParentesis(String cadena) {
+
+
+        int f = 0;
+        while (f < cadena.length()){
+            if (cadena.charAt(f) == '(' || cadena.charAt(f) == '[' || cadena.charAt(f) == '{') {
+             //   raiz.push();
             } else {
-                if (c == ')') {
+                if (cadena.charAt(f) == ')') {
                     extraer();
                 }
                 //faltan comentarios
             }
+            f++;
         }
     }
 

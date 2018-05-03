@@ -1,39 +1,55 @@
 package ejercicios.Proyecto6;
 
-import java.util.Stack;
-import java.io.*;
 import java.util.Scanner;
-
-import static com.sun.activation.registries.LogSupport.log;
+import java.util.Stack;
 
 public class Formula {
 
-    Stack<Character> pila = new Stack<>();
-    String archivo; String cadena; String nombre; String nick; String pow;
+    private static String caracteres;// hay que hacerlo privado para poder ponerlo en el main
+    //String caracteres;
 
-    public void parentesis() {
-        int largo = cadena.length();
-        int posicion = 0;
-        Character c = '*';
-        Boolean ev = true;
 
-        for (int fila = 0; fila < largo; fila++) {
-            posicion = 0;
-            c = cadena.charAt(fila);
-            if (c == '(') {
-                pila.push(c);
-            } else if (c == '[') {
-                pila.push(c);
-            } else if (c == '{') {
-                pila.push(c);
-            } else if (c == ')') {
-                if (pila.isEmpty()) {
-                    if (pow.compareTo("admin") == 0) {
-                       // despliega(nombre, nick, cadena, fila, c, false);
-                        log("bien balanceado");System.exit(0);
-                    } else {log("Mal balanceado con parentesis"); System.exit(1);}
-                }
+    public void carga() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce la cadena a analizar");
+        caracteres = teclado.nextLine();
+    }
+
+
+
+    public static boolean primerIntentoParentesis(String cadena) {
+        Stack <String> raiz = new Stack<String>();
+
+        int i = 0;
+
+        while (i < cadena.length()) {  // Recorremos la expresión carácter a carácter
+
+            if (cadena.charAt(i) == '(' || cadena.charAt(i) == '[' || cadena.charAt(i) == '{') {
+                raiz.push("(");
+            } // Si el paréntesis es de apertura apilamos siempre
+
+            else if (cadena.charAt(i) == ')' || cadena.charAt(i) == ']' || cadena.charAt(i) == '}') {  // Si el paréntesis es de cierre actuamos según el caso
+
+                if (!raiz.empty()) {
+                    raiz.pop();
+                } // Si la pila no está vacía desapilamos
+
+                else {
+                    raiz.push(") || ] || }");
+                    break;
+                } // La pila no puede empezar con un cierre, apilamos y salimos
+
             }
+            i++;
+        }
+        if (raiz.empty()) {
+            System.out.println("esta de lujo campeon.");
+            return true;
+
+        } else {
+            System.out.println("Pero que mierda es esto.");
+            return false;
+
         }
 
     }
@@ -41,7 +57,8 @@ public class Formula {
 
     public static void main(String[] args) {
         Formula formula = new Formula();
-        formula.parentesis();
+        formula.carga();
+        formula.primerIntentoParentesis(caracteres);
     }
 
 }
