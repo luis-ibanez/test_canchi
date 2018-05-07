@@ -1,14 +1,14 @@
 package ejercicios.Proyecto7;
 
 public class Cola {
-    class Nodo {
-        int informacion;
-        Nodo siguiente;
-    }
+
     private Nodo raiz,fondo;
+    private int size;
+
     public Cola() {
         raiz = null;
         fondo = null;
+        size = 0;
     }
 
     public boolean vacia() {
@@ -29,6 +29,7 @@ public class Cola {
             fondo.siguiente = nuevo;
             fondo = nuevo;
         }
+        size ++;
     }
     public int extraer() {
         if (! vacia()) {
@@ -39,9 +40,14 @@ public class Cola {
             } else {
                 raiz = raiz.siguiente;
             }
+            size --;
             return informacion;
         } else
             return Integer.MAX_VALUE;
+    }
+
+    public int size(){
+        return size;
     }
 
     public void imprimir() {
