@@ -1,7 +1,7 @@
 package ejercicios.Proyecto7;
 
 
-public class colaSupermercado extends Cola {
+public class ColaSupermercado extends Cola {
 
     int estado = 0;
     int tiempo = 480;
@@ -43,7 +43,6 @@ public class colaSupermercado extends Cola {
                 }
             }
         }
-
     }
 
 
@@ -91,7 +90,7 @@ public class colaSupermercado extends Cola {
    }
 
     public static void main(String[] ar) {
-        colaSupermercado cajero1 = new colaSupermercado();
+        ColaSupermercado cajero1 = new ColaSupermercado();
         cajero1.simulacionSupermercado();
         cajero1.imprimir();
 
