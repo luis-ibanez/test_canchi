@@ -79,11 +79,11 @@ public class colaSupermercado extends Cola {
     }*/
 
    public void imprimir() {
-       System.out.println("Atendidos caja 1: " + String.valueOf(caja1));
+
        System.out.println("Atendidos caja otra 1: " + caja1);
        System.out.println("Atendidos caja otra 2: " + String.valueOf(caja2));
        System.out.println("Atendidos caja 3: " + String.valueOf(caja3));
-       System.out.println("Atendidos caja 2: " + caja2);
+
 
        System.out.println("En cola" + String.valueOf(llegada));
        System.out.println("Minuto llegada:" + String.valueOf(supermercado.extraer()));
