@@ -15,14 +15,14 @@ public class EnderColaSupermercado {
     private static final int SIMULATION_TIME_MIN = 8 * 60;
 
 
-    Cola colaCaja1;
-    int cajera1 = -1;
+    Cola colaCaja;
+    int cajera = -1;
 
-    Cola colaCaja2;
+    /*Cola colaCaja2;
     int cajera2 = -1;
 
     Cola colaCaja3;
-    int cajera3 = -1;
+    int cajera3 = -1;*/
 
     int last_client = -1;
 
@@ -31,17 +31,17 @@ public class EnderColaSupermercado {
     private int tiempoAtendidoTotal;
 
     public EnderColaSupermercado(){
-        colaCaja1 = new ColaSupermercado();
+        colaCaja = new ColaSupermercado();
         for(int tick = 0; tick < SIMULATION_TIME_MIN; tick++){
             //cola no vacia, y la cajera no trabaja, empiezo con el cliente
-            if (!colaCaja1.vacia() && cajera1 == -1){
-                cajera1 = cajeraGenerator(tick);
-                System.out.println(tick + " - Cajera atendiendo - "+cajera1);
+            if (!colaCaja.vacia() && cajera == -1){
+                cajera = cajeraGenerator(tick);
+                System.out.println(tick + " - Cajera atendiendo - "+ cajera);
             }
-            if(cajera1 == tick){
-                int tickCliente = colaCaja1.extraer();
+            if(cajera == tick){
+                int tickCliente = colaCaja.extraer();
                 tiempoAtendidoTotal +=  tick - tickCliente;
-                cajera1 = -1;
+                cajera = -1;
                 clientesAtendidos ++;
                 System.out.println(tick + " - Cajera Termina - "+clientesAtendidos);
             }
@@ -50,8 +50,8 @@ public class EnderColaSupermercado {
                 System.out.println(tick + " - Cliente entra - "+last_client);
 
             }else if(last_client == tick){
-                if(colaCaja1.size()< MAX_PEOPLE_PER_QUEUE_MIN){
-                    colaCaja1.insertar(tick);
+                if(colaCaja.size()< MAX_PEOPLE_PER_QUEUE_MIN){
+                    colaCaja.insertar(tick);
                     System.out.println(tick + " - Cliente se queda");
                 }else{
                     clientesQueSeMarcharon ++;
@@ -60,7 +60,9 @@ public class EnderColaSupermercado {
                 last_client = -1;
             }
         }
+    }
 
+    public  void imprimirEnder() {
         System.out.println("Clientes atendidos: "+clientesAtendidos);
         System.out.println("Clientes marchados: "+clientesQueSeMarcharon);
         System.out.println("Media de espera: "+ (tiempoAtendidoTotal/clientesAtendidos));

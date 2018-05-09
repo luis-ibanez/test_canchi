@@ -1,7 +1,7 @@
 package ejercicios.Proyecto7;
 
 
-public class ColaSupermercado extends Cola {
+class ColaSupermercado extends Cola {
 
     int estado = 0;
     int tiempo = 480;
