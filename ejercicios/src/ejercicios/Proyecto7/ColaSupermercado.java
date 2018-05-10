@@ -7,7 +7,8 @@ class ColaSupermercado extends Cola {
     int tiempo = 480;
     int caja, caja1, caja2, caja3;
     int llegada = 2 + (int) (Math.random() * 2);
-    int salida = 0, salida1 = -1, salida2 = -1, salida3 = -1;
+    int salida = 6+(int) (Math.random()*10);
+    int salida1 = -1, salida2 = -1, salida3 = -1;
     int cantidadAtendidas = 0, cantidadAtendidas1 = 0, cantidadAtendidas2 = 0, cantidadAtendidas3 = 0;
     int personasQueSeMarchan = 0;
 
@@ -17,6 +18,12 @@ class ColaSupermercado extends Cola {
 
 
     public void simulacionSupermercado() {
+        System.out.println("EXPEDIENTE X");
+        System.out.println("salida: " + salida);
+        System.out.println("llegada: " + llegada);
+        salida = salida - llegada;
+        System.out.println("paflipar: " + salida);
+
 
         for (int minuto = 0; minuto < tiempo; minuto++) {
             System.out.println(minuto);
@@ -26,7 +33,7 @@ class ColaSupermercado extends Cola {
                     caja1 = 1;
                     System.out.println("Atendidos caja1: " + caja1);
 
-                    salida1 = minuto + 7 + (int) (Math.random() * 10);
+                    salida1 = minuto + 5 + (int) (Math.random() * 8);
                     System.out.println("salida caja1: " + salida1);
 
                 }
@@ -45,28 +52,28 @@ class ColaSupermercado extends Cola {
                     salida3 = minuto + 7 + (int) (Math.random() * 10);
                     System.out.println("salida caja3: " + salida3 + " por ver " + cola3.size());
 
-                }  else {
-                        if (cola1.size() == 6) {
-                            cola2.insertar(minuto);
-                            System.out.println("se une a la cola1: " + cola1.cantidad());
+                } else {
+                    if (cola1.size() == 6) {
+                        cola2.insertar(minuto);
+                        System.out.println("se une a la cola1: " + cola1.cantidad());
+
+                    } else {
+                        if (cola2.size() == 6) {
+                            cola3.insertar(minuto);
+                            System.out.println("se une a la cola2: " + cola2.extraer());
 
                         } else {
-                            if (cola2.size() == 6) {
-                                cola3.insertar(minuto);
-                                System.out.println("se une a la cola2: " + cola2.extraer());
-
-                            } else {
-                                if (cola3.size() == 6) {
-                                    cola1.insertar(minuto);
-                                    System.out.println("se une a la cola3: " + cola3.extraer());
-                                }
-                            } if (cola1.size() == 6 && cola2.size() == 6 && cola3.size() == 6) {
-                                personasQueSeMarchan++;
-
+                            if (cola3.size() == 6) {
+                                cola1.insertar(minuto);
+                                System.out.println("se une a la cola3: " + cola3.extraer());
                             }
                         }
-                    }
+                        if (cola1.size() == 6 && cola2.size() == 6 && cola3.size() == 6) {
+                            personasQueSeMarchan++;
 
+                        }
+                    }
+                }
 
 
                 llegada = minuto + 2 + (int) (Math.random() * 2);
@@ -110,8 +117,8 @@ class ColaSupermercado extends Cola {
 
 
         }
-        salida = salida1 + salida2 + salida3;
-        caja = caja1 + caja2 + caja3;
+        //salida = salida1 + salida2 + salida3;
+        //caja = caja1 + caja2 + caja3;
         cantidadAtendidas = cantidadAtendidas1 + cantidadAtendidas2 + cantidadAtendidas3;
     }
 
@@ -120,7 +127,7 @@ class ColaSupermercado extends Cola {
         System.out.println("Atendidos caja 1: " + cantidadAtendidas1);
         System.out.println("Atendidos caja 2: " + cantidadAtendidas2);
         System.out.println("Atendidos caja 3: " + cantidadAtendidas3);
-        
+        System.out.println("Atendidos caja: " + caja);
 
 
         System.out.println("Promedio total en la cola: " + (tiempo - 2) / cantidadAtendidas);
@@ -130,6 +137,11 @@ class ColaSupermercado extends Cola {
 
         System.out.println("Atendidas: " + cantidadAtendidas);
         System.out.println("Personas que se marchan: " + personasQueSeMarchan);
+        System.out.println("EXPEDIENTE X");
+        System.out.println("salida: " + salida);
+        System.out.println("llegada: " + llegada);
+        salida = salida - llegada;
+        System.out.println("paflipar: " + salida);
 
     }
 
