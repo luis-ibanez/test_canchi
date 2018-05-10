@@ -5,95 +5,138 @@ class ColaSupermercado extends Cola {
 
     int estado = 0;
     int tiempo = 480;
-    int caja1, caja2, caja3;
+    int caja, caja1, caja2, caja3;
     int llegada = 2 + (int) (Math.random() * 2);
-    int salida = -1;
-    int cantidadAtendidas = 0;
-    Cola supermercado = new Cola();
+    int salida = 0, salida1 = -1, salida2 = -1, salida3 = -1;
+    int cantidadAtendidas = 0, cantidadAtendidas1 = 0, cantidadAtendidas2 = 0, cantidadAtendidas3 = 0;
+    int personasQueSeMarchan = 0;
+
+    Cola cola1 = new Cola();
+    Cola cola2 = new Cola();
+    Cola cola3 = new Cola();
+
 
     public void simulacionSupermercado() {
+
         for (int minuto = 0; minuto < tiempo; minuto++) {
+            System.out.println(minuto);
+
             if (llegada == minuto) {
-                if (caja1 == 0 ) {
+                if (caja1 == 0) {
                     caja1 = 1;
-                    salida = minuto + 7 + (int) (Math.random() * 10);
-                } else  {
-                    supermercado.insertar(minuto);
+                    System.out.println("Atendidos caja1: " + caja1);
+
+                    salida1 = minuto + 7 + (int) (Math.random() * 10);
+                    System.out.println("salida caja1: " + salida1);
+
                 }
-                if (caja2 == 0 ) {
+                if (caja2 == 0) {
                     caja2 = 1;
-                    salida = minuto + 7 + (int) (Math.random() * 10);
-                } else  {
-                    supermercado.insertar(minuto);
+                    System.out.println("Atendidos caja2: " + caja2);
+
+                    salida2 = minuto + 7 + (int) (Math.random() * 10);
+                    System.out.println("salida caja2: " + salida2);
+
                 }
-                if (caja3 == 1 ) {
-                    caja3= 1;
-                    salida = minuto + 7 + (int) (Math.random() * 10);
-                } else  {
-                    supermercado.insertar(minuto);
-                }
-            }
-            if (salida == minuto) {
-                caja1 = 0;
-                cantidadAtendidas++;
-                if (!supermercado.vacia()) {
-                    supermercado.extraer();
-                    caja1 = 1;
-                    salida = minuto + 7 + (int) (Math.random() * 10);
-                }
-            }
-        }
-    }
+                if (caja3 == 0) {
+                    caja3 = 1;
+                    System.out.println("Atendidos caja3: " + caja3);
+
+                    salida3 = minuto + 7 + (int) (Math.random() * 10);
+                    System.out.println("salida caja3: " + salida3 + " por ver " + cola3.size());
+
+                }  else {
+                        if (cola1.size() == 6) {
+                            cola2.insertar(minuto);
+                            System.out.println("se une a la cola1: " + cola1.cantidad());
+
+                        } else {
+                            if (cola2.size() == 6) {
+                                cola3.insertar(minuto);
+                                System.out.println("se une a la cola2: " + cola2.extraer());
+
+                            } else {
+                                if (cola3.size() == 6) {
+                                    cola1.insertar(minuto);
+                                    System.out.println("se une a la cola3: " + cola3.extraer());
+                                }
+                            } if (cola1.size() == 6 && cola2.size() == 6 && cola3.size() == 6) {
+                                personasQueSeMarchan++;
+
+                            }
+                        }
+                    }
 
 
-   /* public void simulacion() {
-        int estado = 0;
-        int llegada = 2 + (int) (Math.random() * 2);
-        int salida = -1;
-        int cantAtendidas = 0;
-        Cola cola = new Cola();
-        for (int minuto = 0; minuto < 600; minuto++) {
-            if (llegada == minuto) {
-                if (estado == 0) {
-                    estado = 1;
-                    salida = minuto + 2 + (int) (Math.random() * 3);
-                } else {
-                    cola.insertar(minuto);
-                }
+
                 llegada = minuto + 2 + (int) (Math.random() * 2);
             }
-            if (salida == minuto) {
-                estado = 0;
-                cantAtendidas++;
-                if (!cola.vacia()) {
-                    cola.extraer();
-                    estado = 1;
-                    salida = minuto + 2 + (int) (Math.random() * 3);
+            if (salida1 == minuto) {
+                caja1 = 0;
+                cantidadAtendidas1++;
+                if (!cola1.vacia()) {
+                    cola1.extraer();
+                    caja1 = 1;
+                    salida1 = minuto + 7 + (int) (Math.random() * 10);
+
+                    System.out.println("a ver que mierda hace la caja 1: " + caja1);
+                    System.out.println(" a ver si suma: " + cantidadAtendidas1);
                 }
             }
+
+            if (salida2 == minuto) {
+                caja2 = 0;
+                cantidadAtendidas2++;
+                if (!cola1.vacia()) {
+                    cola1.extraer();
+                    caja1 = 1;
+                    salida2 = minuto + 7 + (int) (Math.random() * 10);
+                    System.out.println("a ver que mierda hace la caja 2: " + caja2);
+                    System.out.println(" a ver si suma2: " + cantidadAtendidas2);
+                }
+            }
+
+            if (salida3 == minuto) {
+                caja3 = 0;
+                cantidadAtendidas3++;
+                if (!cola1.vacia()) {
+                    cola1.extraer();
+                    caja1 = 1;
+                    salida3 = minuto + 7 + (int) (Math.random() * 10);
+                    System.out.println("a ver que mierda hace la caja 3: " + caja3);
+                    System.out.println(" a ver si suma 3: " + cantidadAtendidas3);
+                }
+            }
+
+
         }
-        System.out.println("Atendidos:" + String.valueOf(cantAtendidas));
-        System.out.println("En cola" + String.valueOf(estado));
-        System.out.println("Minuto llegada:" + String.valueOf(cola.extraer()));
-    }*/
+        salida = salida1 + salida2 + salida3;
+        caja = caja1 + caja2 + caja3;
+        cantidadAtendidas = cantidadAtendidas1 + cantidadAtendidas2 + cantidadAtendidas3;
+    }
 
-   public void imprimir() {
+    public void imprimir() {
 
-       System.out.println("Atendidos caja otra 1: " + caja1);
-       System.out.println("Atendidos caja otra 2: " + String.valueOf(caja2));
-       System.out.println("Atendidos caja 3: " + String.valueOf(caja3));
+        System.out.println("Atendidos caja 1: " + cantidadAtendidas1);
+        System.out.println("Atendidos caja 2: " + cantidadAtendidas2);
+        System.out.println("Atendidos caja 3: " + cantidadAtendidas3);
+        
 
 
-       System.out.println("En cola" + String.valueOf(llegada));
-       System.out.println("Minuto llegada:" + String.valueOf(supermercado.extraer()));
-       System.out.println("Atendidas: " + cantidadAtendidas);
-   }
+        System.out.println("Promedio total en la cola: " + (tiempo - 2) / cantidadAtendidas);
+        System.out.println("Promedio en la cola 1: " + (tiempo - 2) / cantidadAtendidas1);
+        System.out.println("Promedio en la cola 2: " + (tiempo - 2) / cantidadAtendidas2);
+        System.out.println("Promedio en la cola 3: " + (tiempo - 2) / cantidadAtendidas3);
+
+        System.out.println("Atendidas: " + cantidadAtendidas);
+        System.out.println("Personas que se marchan: " + personasQueSeMarchan);
+
+    }
 
     public static void main(String[] ar) {
         ColaSupermercado cajero1 = new ColaSupermercado();
         cajero1.simulacionSupermercado();
         cajero1.imprimir();
-
 
     }
 }

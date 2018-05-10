@@ -80,6 +80,7 @@ public class EnderColaSupermercado {
 
     public static void main(String args[]){
         EnderColaSupermercado colaSupermercado =  new EnderColaSupermercado();
+        colaSupermercado.imprimirEnder();
     }
 }
 

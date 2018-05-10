@@ -46,6 +46,16 @@ public class Cola {
             return Integer.MAX_VALUE;
     }
 
+    public int cantidad() {
+        int cant=0;
+        Nodo reco=raiz;
+        while (reco!=null) {
+            cant++;
+            reco=reco.siguiente;
+        }
+        return cant;
+    }
+
     public int size(){
         return size;
     }

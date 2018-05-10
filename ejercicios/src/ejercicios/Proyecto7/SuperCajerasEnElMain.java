@@ -79,13 +79,13 @@ public class SuperCajerasEnElMain {
     public static void main(String[] args) {
         SuperCajerasEnElMain cajeras = new SuperCajerasEnElMain();
         Cola colaCaja1 = new Cola();
-        int cajera1 = -1;
+        int cajera1 = 0;
 
         Cola colaCaja2 = new Cola();
-        int cajera2 = -1;
+        int cajera2 = 0;
 
         Cola colaCaja3 = new Cola();
-        int cajera3 = -1;
+        int cajera3 = 0;
 
         int last_client = -1;
         for (int tick = 0; tick < SIMULATION_TIME_MIN; tick++) {
