@@ -1,22 +1,22 @@
-package ejercicios.Proyecto7;
+//package ejercicios.Proyecto7;
 
 import java.util.Random;
 
 /**
  * Created by libanez on 07/05/2018.
  */
-public class EnderColaSupermercado {
+/*public class EnderColaSupermercado {
 
     private static final int MAX_PEOPLE_PER_QUEUE_MIN = 6;
     private static final int MIN_CAJERA_TIME_MIN = 7;
     private static final int MAX_CAJERA_TIME_MIN = 11;
     private static final int MIN_CLIENT_TIME_MIN = 2;
     private static final int MAX_CLIENT_TIME_MIN = 3;
-    private static final int SIMULATION_TIME_MIN = 8 * 60;
+    private static final int SIMULATION_TIME_MIN = 8 * 60;   */
 
 
-    Cola colaCaja;
-    int cajera = -1;
+   // Cola colaCaja;
+   // int cajera = -1;
 
     /*Cola colaCaja2;
     int cajera2 = -1;
@@ -24,19 +24,19 @@ public class EnderColaSupermercado {
     Cola colaCaja3;
     int cajera3 = -1;*/
 
-    int last_client = -1;
+/*    int last_client = -1;
 
     private int clientesAtendidos;
     private int clientesQueSeMarcharon;
     private int tiempoAtendidoTotal;
 
     public EnderColaSupermercado(){
-        colaCaja = new ColaSupermercado();
+        colaCaja = new Cola();
         for(int tick = 0; tick < SIMULATION_TIME_MIN; tick++){
             //cola no vacia, y la cajera no trabaja, empiezo con el cliente
             if (!colaCaja.vacia() && cajera == -1){
                 cajera = cajeraGenerator(tick);
-                System.out.println(tick + " - Cajera atendiendo - "+ cajera);
+                System.out.println(tick + " - Cajera atendiendo - "+ cajera +" mas "+ colaCaja.cantidad());
             }
             if(cajera == tick){
                 int tickCliente = colaCaja.extraer();
@@ -84,7 +84,7 @@ public class EnderColaSupermercado {
     }
 }
 
-/*
+
 
     Un supermercado tiene tres cajas para la atención de los clientes.
     Las cajeras tardan entre 7 y 11 minutos para la atención de cada cliente.

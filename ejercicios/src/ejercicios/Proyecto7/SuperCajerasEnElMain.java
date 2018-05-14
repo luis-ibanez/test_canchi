@@ -1,4 +1,4 @@
-package ejercicios.Proyecto7;
+/*package ejercicios.Proyecto7;
 
 
 public class SuperCajerasEnElMain {
@@ -100,5 +100,5 @@ public class SuperCajerasEnElMain {
         }
     }
 }
-
+*/
 

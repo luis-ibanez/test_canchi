@@ -22,136 +22,110 @@ public class TerminoSuperDeEnder {
     int cajera3 = -1;
 
     int last_client = -1;
+    int promedio;
 
     private int clientesAtendidos, clientesAtendidos2, clientesAtendidos3, clientesAtendidos1;
     private int clientesQueSeMarcharon;
     private int tiempoAtendidoTotal;
 
     public TerminoSuperDeEnder() {
-        colaCaja1 = new ColaSupermercado();
-        colaCaja2 = new ColaSupermercado();
-        colaCaja3 = new ColaSupermercado();
-    }
+        colaCaja1 = new Cola();
+        colaCaja2 = new Cola();
+        colaCaja3 = new Cola();
 
-    public void comparar() {
         for (int tick = 0; tick < SIMULATION_TIME_MIN; tick++) {
-            cajera1 = cajeraGenerator(tick);
-            System.out.println(tick + " - Cajera1 atendiendo - " + cajera1);
-            if (colaCaja1.size() < colaCaja2.size() && colaCaja1.size() < colaCaja3.size()) {
-
-                if (cajera1 == tick) {
-                    int tickCliente = colaCaja1.extraer();
-                    tiempoAtendidoTotal += tick - tickCliente;
-                    cajera1 = -1;
-                    clientesAtendidos1++;
-                    System.out.println(tick + " - Cajera1 Termina - " + clientesAtendidos);
-                }
-                if (last_client == -1) {
-                    last_client = clientGenerator(tick);
-                    System.out.println(tick + " - Cliente1 entra - " + last_client);
-
-                } else if (last_client == tick) {
-                    if (colaCaja1.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
-                        colaCaja1.insertar(tick);
-                        System.out.println(tick + " - Cliente1 se queda");
-                    }
-                    last_client = -1;
-                }
+            if (!colaCaja1.vacia() && cajera1 == -1) {
+                cajera1 = cajeraGenerator(tick);
+                colaCaja1.insertar(tick);
+                System.out.println(tick + " - Cajera 1 atendiendo - " + cajera1 + " mas " + colaCaja1.cantidad() + colaCaja1.size());
             }
-            if (colaCaja2.size() < colaCaja1.size() && colaCaja2.size() < colaCaja3.size()) {
-
-                cajera2 = cajeraGenerator(tick);
-                System.out.println(tick + " - Cajera 2 atendiendo - " + cajera2);
-
-                if (cajera2 == tick) {
-                    int tickCliente = colaCaja2.extraer();
-                    tiempoAtendidoTotal += tick - tickCliente;
-                    cajera2 = -1;
-                    clientesAtendidos2++;
-                    System.out.println(tick + " - Cajera2 Termina - " + clientesAtendidos);
-
-                }
-                if (last_client == -1) {
-                    last_client = clientGenerator(tick);
-                    System.out.println(tick + " - Cliente2 entra - " + last_client);
-
-                } else if (last_client == tick) {
-                    if (colaCaja2.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
-                        colaCaja2.insertar(tick);
-                        System.out.println(tick + " - Cliente2 se queda");
-                    }
-                    last_client = -1;
-                }
-            }
-            if (colaCaja3.size() < colaCaja2.size() && colaCaja3.size() < colaCaja1.size()) {
-
-                if (cajera3 == tick) {
-                    cajera3 = cajeraGenerator(tick);
-                    System.out.println(tick + " - Cajera 3 atendiendo - " + cajera3);
-
-                    int tickCliente = colaCaja3.extraer();
-                    tiempoAtendidoTotal += tick - tickCliente;
-                    cajera3 = -1;
-                    clientesAtendidos3++;
-                    System.out.println(tick + " - Cajera3 Termina - " + clientesAtendidos);
-                }
-                if (last_client == -1) {
-                    last_client = clientGenerator(tick);
-                    System.out.println(tick + " - Cliente3 entra - " + last_client);
-
-                } else if (last_client == tick) {
-                    if (colaCaja3.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
-                        colaCaja3.insertar(tick);
-                        System.out.println(tick + " - Cliente3 se queda");
-                    }
-                    last_client = -1;
-                }
-            }
-
-            if (cajera1 >= 6 && cajera2 >= 6 && cajera3 >= 6) {
-                clientesQueSeMarcharon++;
-                System.out.println(tick + " - Cliente se va");
-            }
-        }
-        clientesAtendidos = (clientesAtendidos1 + clientesAtendidos2 + clientesAtendidos3);
-    }
-
-    /*public void caja() {
-        for (int tick = 0; tick < SIMULATION_TIME_MIN; tick++) {
-            //cola no vacia, y la cajera no trabaja, empiezo con el cliente
-            if (!colaCaja.vacia() && cajera == -1) {
-                cajera = cajeraGenerator(tick);
-                System.out.println(tick + " - Cajera atendiendo - " + cajera);
-            }
-            if (cajera == tick) {
-                int tickCliente = colaCaja.extraer();
+            if (cajera1 == tick) {
+                int tickCliente = colaCaja1.extraer();
                 tiempoAtendidoTotal += tick - tickCliente;
-                cajera = -1;
-                clientesAtendidos++;
-                System.out.println(tick + " - Cajera Termina - " + clientesAtendidos);
+                cajera1 = -1;
+                clientesAtendidos1++;
+                System.out.println(tick + " - Cajera 1 Termina - " + clientesAtendidos1 + "resta?" + colaCaja1.cantidad());
             }
             if (last_client == -1) {
                 last_client = clientGenerator(tick);
-                System.out.println(tick + " - Cliente entra - " + last_client);
+                System.out.println(tick + " - Cliente 1 entra - " + last_client);
 
             } else if (last_client == tick) {
-                if (colaCaja.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
-                    colaCaja.insertar(tick);
-                    System.out.println(tick + " - Cliente se queda");
-                } else {
-                    clientesQueSeMarcharon++;
-                    System.out.println(tick + " - Cliente se va");
+                if (colaCaja1.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
+
+                    System.out.println(tick + " - Cliente 1 se queda" + "-" + colaCaja1.cantidad()+"-"+ colaCaja1.size());
                 }
-                last_client = -1;
+            }
+            if (!colaCaja2.vacia() && cajera2 == -1) {
+                cajera2 = cajeraGenerator(tick);
+                System.out.println(tick + " - Cajera 2 atendiendo - " + cajera2 + " mas " + colaCaja2.cantidad());
+            }
+            if (cajera2 == tick) {
+                int tickCliente = colaCaja2.extraer();
+                tiempoAtendidoTotal += tick - tickCliente;
+                cajera2 = -1;
+                clientesAtendidos2++;
+                System.out.println(tick + " - Cajera 2 Termina - " + clientesAtendidos2);
+            }
+            if (last_client == -1) {
+                last_client = clientGenerator(tick);
+                System.out.println(tick + " - Cliente 2 entra - " + last_client);
+
+            } else if (last_client == tick) {
+                if (colaCaja2.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
+                    colaCaja2.insertar(tick);
+                    System.out.println(tick + " - Cliente 2 se queda");
+                }
+            }
+            if (!colaCaja3.vacia() && cajera3 == -1) {
+                cajera3 = cajeraGenerator(tick);
+                System.out.println(tick + " - Cajera 3 atendiendo - " + cajera3 + " mas " + colaCaja3.cantidad());
+            }
+            if (cajera3 == tick) {
+                int tickCliente = colaCaja3.extraer();
+                tiempoAtendidoTotal += tick - tickCliente;
+                cajera3 = -1;
+                clientesAtendidos3++;
+                System.out.println(tick + " - Cajera 3 Termina - " + clientesAtendidos3);
+            }
+            if (last_client == -1) {
+                last_client = clientGenerator(tick);
+                System.out.println(tick + " - Cliente 3 entra - " + last_client);
+
+            } else if (last_client == tick) {
+                if (colaCaja3.size() < MAX_PEOPLE_PER_QUEUE_MIN) {
+                    colaCaja3.insertar(tick);
+                    System.out.println(tick + " - Cliente 3 se queda");
+                }
+            }
+            if (colaCaja1.cantidad() < colaCaja2.cantidad() && colaCaja1.cantidad() < colaCaja3.cantidad()) {
+                colaCaja1.insertar(tick);
+            } else if (colaCaja2.cantidad() < colaCaja3.cantidad()) {
+                colaCaja2.insertar(tick);
+            } else if (colaCaja3.cantidad() < colaCaja1.cantidad()) {
+                colaCaja3.insertar(tick);
+            }
+
+            if (colaCaja1.cantidad() == 6 && colaCaja2.cantidad() == 6 && colaCaja3.cantidad() == 6) {
+                clientesQueSeMarcharon ++;
+                System.out.println(tick + " - Cliente se va");
             }
         }
-    }*/
 
-    public void imprimir() {
-        System.out.println("Clientes atendidos: " + clientesAtendidos);
-        System.out.println("Clientes marchados: " + clientesQueSeMarcharon);
-        System.out.println("Media de espera: " + (tiempoAtendidoTotal / clientesAtendidos));
+        clientesAtendidos = clientesAtendidos1 + clientesAtendidos2 + clientesAtendidos3;
+        System.out.println("clientes atendidos para ver si los suma: " + clientesAtendidos);
+        promedio = SIMULATION_TIME_MIN / (clientesAtendidos -2);
+
     }
+    public void imprimir() {
+        System.out.println("Clientes atendidos caja 1: " + clientesAtendidos1);
+        System.out.println("Clientes atendidos caja 2: " + clientesAtendidos2);
+        System.out.println("Clientes atendidos caja 3: " + clientesAtendidos3);
+        System.out.println("Clientes atendidos totales: " + clientesAtendidos);
+        System.out.println("Clientes que se marcharon sin compra: " + clientesQueSeMarcharon);
+        System.out.println("Tiempo promedio de espera: " + promedio);
+
+            }
 
     public int clientGenerator(int tick) {
         Random random = new Random();
@@ -163,15 +137,12 @@ public class TerminoSuperDeEnder {
         return tick + MIN_CAJERA_TIME_MIN + random.nextInt(MAX_CAJERA_TIME_MIN - MIN_CAJERA_TIME_MIN);
     }
 
-    public static void main(String args[]) {
-        TerminoSuperDeEnder colaSupermercado = new TerminoSuperDeEnder();
-        colaSupermercado.comparar();
-        colaSupermercado.imprimir();
 
-
+    public static void main(String[] args) {
+        TerminoSuperDeEnder terminoSuperDeEnder = new TerminoSuperDeEnder();
+        terminoSuperDeEnder.imprimir();
     }
 }
-
 /*
 
     Un supermercado tiene tres cajas para la atención de los clientes.

@@ -53,6 +53,7 @@ public class Cola {
             cant++;
             reco=reco.siguiente;
         }
+        //System.out.println("y esto que mierda hace que nome lodice bien: " + cant);
         return cant;
     }
 
@@ -72,12 +73,13 @@ public class Cola {
     public static void main(String[] args) {
         Cola cola = new Cola();
         cola.vacia();
-        /*cola.insertar(5);
+        cola.insertar(5);
         cola.insertar(50);
-        cola.insertar(200);*/
+        cola.insertar(200);
         cola.imprimir();
         cola.extraer();
         cola.imprimir();
+        cola.cantidad();
     }
 
 }

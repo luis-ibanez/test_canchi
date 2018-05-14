@@ -1,4 +1,4 @@
-package ejercicios.Proyecto7;
+/*package ejercicios.Proyecto7;
 
 
 class ColaSupermercado extends Cola {
@@ -17,13 +17,8 @@ class ColaSupermercado extends Cola {
     Cola cola3 = new Cola();
 
 
-    public void simulacionSupermercado() {
-        System.out.println("EXPEDIENTE X");
-        System.out.println("salida: " + salida);
-        System.out.println("llegada: " + llegada);
-        salida = salida - 2;
-        System.out.println("paflipar: " + salida);
 
+    public void simulacionSupermercado() {
 
         for (int minuto = 0; minuto < tiempo; minuto++) {
             System.out.println(minuto);
@@ -31,7 +26,7 @@ class ColaSupermercado extends Cola {
             if (llegada == minuto) {
                 if (caja1 == 0) {
                     caja1 = 1;
-                    System.out.println("Atendidos caja1: " + caja1);
+                    System.out.println("Atendidos caja1: " + caja1 + "y en la caja hay: " + cola1.cantidad());
 
                     salida1 = minuto + 5 + (int) (Math.random() * 5);
                     System.out.println("salida caja1: " + salida1);
@@ -50,10 +45,10 @@ class ColaSupermercado extends Cola {
                     System.out.println("Atendidos caja3: " + caja3);
 
                     salida3 = minuto + 5 + (int) (Math.random() * 5);
-                    System.out.println("salida caja3: " + salida3 + " por ver " + cola3.size());
+                    System.out.println("salida caja3: " + salida3 + " por ver " + cola3.cantidad());
 
                 } else {
-                    if (cola1.size() == 6) {
+                    if (cola1.cantidad() == 6) {
                         cola2.insertar(minuto);
                         System.out.println("se une a la cola1: " + cola1.cantidad());
 
@@ -62,10 +57,13 @@ class ColaSupermercado extends Cola {
                             cola3.insertar(minuto);
                             System.out.println("se une a la cola2: " + cola2.extraer());
 
-                        } else {
-                            personasQueSeMarchan++;
                         }
                     }
+                }
+                if (cola1.size() == 6 && cola2.size() == 6 && cola3.size() == 6) {
+                    personasQueSeMarchan++;
+                    System.out.println("Personas que se marchan: " + personasQueSeMarchan);
+
                 }
                 llegada = minuto + 2 + (int) (Math.random() * 2);
             }
@@ -78,7 +76,7 @@ class ColaSupermercado extends Cola {
                     salida1 = minuto + 7 + (int) (Math.random() * 10);
 
                     System.out.println("a ver que mierda hace la caja 1: " + caja1);
-                    System.out.println(" a ver si suma: " + cantidadAtendidas1);
+                    System.out.println(" a ver si suma: " + cantidadAtendidas1 + " y a ver aki " + cola1.cantidad());
                 }
             }
 
@@ -138,7 +136,7 @@ class ColaSupermercado extends Cola {
 
     }
 }
-/*
+
 
     Un supermercado tiene tres cajas para la atención de los clientes.
     Las cajeras tardan entre 7 y 11 minutos para la atención de cada cliente.
