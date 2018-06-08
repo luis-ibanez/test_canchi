@@ -1,6 +1,8 @@
 package ejercicios.EjerciciosVectores;
 
+import java.util.Enumeration;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class VectoresOrdenadosParalelos2 {
     private Scanner teclado = new Scanner(System.in);
@@ -59,6 +61,7 @@ public class VectoresOrdenadosParalelos2 {
             }
         }
     }
+
 
     public static void main(String[] args){
         VectoresOrdenadosParalelos2 toma = new VectoresOrdenadosParalelos2();

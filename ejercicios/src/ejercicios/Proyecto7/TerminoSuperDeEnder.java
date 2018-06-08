@@ -112,7 +112,7 @@ public class TerminoSuperDeEnder {
                 System.out.println(" - comprobacion - " + cajera1 + " colaCaja1 " + colaCaja1.cantidad() + " size " + colaCaja1.size());
                 System.out.println(" - comprobacion - " + cajera2 + " colaCaja2 " + colaCaja2.cantidad() + " size " + colaCaja2.size());
                 System.out.println(" - comprobacion - " + cajera3 + " colaCaja3 " + colaCaja3.cantidad() + " size " + colaCaja3.size());
-                last_client = -1; //he puesto esto por que si no no entra nunca otro cliente nuevo
+               // last_client = -1; //he puesto esto porque si no no genera ningun cliente nuevo
 
                 //si la caja1 es menor que 2 y 3
                 if (caja1Cola < caja2Cola && caja1Cola < caja3Cola) {
@@ -158,6 +158,8 @@ public class TerminoSuperDeEnder {
         promedio = tiempoAtendidoTotal / clientesAtendidos;
     }
 
+
+
     public void imprimir() {
         System.out.println("Clientes atendidos totales: " + clientesAtendidos);
         System.out.println("Clientes que se marcharon sin compra: " + clientesQueSeMarcharon);
@@ -179,6 +181,7 @@ public class TerminoSuperDeEnder {
     public static void main(String[] args) {
         TerminoSuperDeEnder terminoSuperDeEnder = new TerminoSuperDeEnder();
         terminoSuperDeEnder.imprimir();
+        //terminoSuperDeEnder.size();
     }
 }
 /*
