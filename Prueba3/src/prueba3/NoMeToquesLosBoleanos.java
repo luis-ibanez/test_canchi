@@ -65,7 +65,7 @@ public class NoMeToquesLosBoleanos {
         System.out.println("Que resultado nos da otra Forma ==: " + operacionesVF);
         operacionesVF = (valor1 != valor2);
         System.out.println("Que resultado nos da otra Forma !=: " + operacionesVF);
-        if (operacionesVF == true) {
+        if (operacionesVF == true) { //para que se cumpla valor1 y valor2 tienen que ser distintos
             System.out.println("Ya se hacer algo mas: " + operacionesVF);
         } else {
             System.out.println("No tengo ni idea: " + operacionesVF);
