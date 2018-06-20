@@ -134,7 +134,7 @@ public class SecuenciaFibonache {
                     if (cuarto == cuartoColmillo && tercero == tercerColmillo && segundo == segundoColmillo && primero == primerColmillo) {
                         int contador = 0;
                         vampiros[contador] = numero1;
-                        System.out.println("Los números vampiro son: " + numero1 + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+                        System.out.println("Los números vampiro son: " + numero1 + ".");
                         contador++;
                     }
                 }
@@ -145,8 +145,11 @@ public class SecuenciaFibonache {
 
     public static void main(String[] args) {
         SecuenciaFibonache secuencia = new SecuenciaFibonache();
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>secuencia Fibonnacci<<<<<<<<<<<<<<<<<<<<<<<<<");
         secuencia.Fibonnacci();
+        System.out.println("*>>>>>>>>>>>>>>>>>>>>>>>Ejemplo swich<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         secuencia.EjemploSwitch();
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>Números vampiro<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         secuencia.NumeroVampiro();
     }
 }
