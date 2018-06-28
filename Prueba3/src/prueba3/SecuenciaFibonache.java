@@ -6,18 +6,21 @@ public class SecuenciaFibonache {
         int resultado;
         int i = 1;
 
-        System.out.println(i);
+        System.out.print(i);
+        System.out.print(", ");
 
         for (int c = 1; c < 100; ) {
-            System.out.println(c);
+            System.out.print(c);
+            System.out.print(", ");
             resultado = i + c;
             i = c;
             c = resultado;
         }
+        System.out.println();
     }
 
     public void EjemploSwitch() {
-        int numero = 0;
+        int numero;
         for (int i = 1; i < 10; i++) {
             numero = i;
 
@@ -44,9 +47,9 @@ public class SecuenciaFibonache {
     }
 
     public void NumeroVampiro() {
-        int[] vampiros = new int[50];
+        int[] vampiros = new int[7];
         int numero;
-        int numero1;
+        int replicaParaOperarSinModificarNumero;
         int cuarto;
         int tercero;
         int segundo;
@@ -55,15 +58,18 @@ public class SecuenciaFibonache {
         int segundoColmillo;
         int tercerColmillo;
         int cuartoColmillo;
-        int numeroColmillo1;
-        int numeroColmillo2;
+        int separarColmillo1EnNumerosSueltos;
+        int separarColmillo2EnNumerosSueltos;
+        int contador = 0;
+        int n = 9;
 
         for (int colmillo1 = 10; colmillo1 < 100; colmillo1++) {
-            for (int colmillo2 = 10; colmillo2 < 100; colmillo2++) {
-                numeroColmillo1 = colmillo1;
-                numeroColmillo2 = colmillo2;
+            n++;
+            for (int colmillo2 = n ;colmillo2 < 100; colmillo2++) {
+                separarColmillo1EnNumerosSueltos = colmillo1;
+                separarColmillo2EnNumerosSueltos = colmillo2;
                 numero = colmillo1 * colmillo2;
-                numero1 = numero;
+                replicaParaOperarSinModificarNumero = numero;
                 if (numero > 1000 && numero < 10000) {
 //                    System.out.println("Número a comprobar: " + numero);
 //                    System.out.println("Número colmillo1: " + colmillo1);
@@ -100,16 +106,16 @@ public class SecuenciaFibonache {
                             segundo = primero;
                             primero = temp;
                         }
-                       //System.out.println("cuarto: " + cuarto + " tercero: " + tercero + " segundo: " + segundo + " primero: " + primero + "<<<<<<<<<<<<<<<");
+                        //System.out.println("cuarto: " + cuarto + " tercero: " + tercero + " segundo: " + segundo + " primero: " + primero + "<<<<<<<<<<<<<<<");
                     }
-                    tercerColmillo = numeroColmillo1 % 10;
-                    numeroColmillo1 = numeroColmillo1 / 10;
-                    cuartoColmillo = numeroColmillo1 % 10;
+                    tercerColmillo = separarColmillo1EnNumerosSueltos % 10;
+                    separarColmillo1EnNumerosSueltos = separarColmillo1EnNumerosSueltos / 10;
+                    cuartoColmillo = separarColmillo1EnNumerosSueltos % 10;
 
-                    primerColmillo = numeroColmillo2 % 10;
-                    numeroColmillo2 = numeroColmillo2 / 10;
-                    segundoColmillo = numeroColmillo2 % 10;
-                   // System.out.println("cuartoColmillo: " + cuartoColmillo + " tercerColmillo: " + tercerColmillo + " segundoColmillo: " + segundoColmillo + " primerColmillo: " + primerColmillo);
+                    primerColmillo = separarColmillo2EnNumerosSueltos % 10;
+                    separarColmillo2EnNumerosSueltos = separarColmillo2EnNumerosSueltos / 10;
+                    segundoColmillo = separarColmillo2EnNumerosSueltos % 10;
+                    // System.out.println("cuartoColmillo: " + cuartoColmillo + " tercerColmillo: " + tercerColmillo + " segundoColmillo: " + segundoColmillo + " primerColmillo: " + primerColmillo);
                     for (int i = 0; i < 4; i++) {
                         if (cuartoColmillo < tercerColmillo) {
                             int temp;
@@ -132,24 +138,22 @@ public class SecuenciaFibonache {
                         //System.out.println("cuartoColmillo: " + cuartoColmillo + " tercerColmillo: " + tercerColmillo + " segundoColmillo: " + segundoColmillo + " primerColmillo: " + primerColmillo);
                     }
                     if (cuarto == cuartoColmillo && tercero == tercerColmillo && segundo == segundoColmillo && primero == primerColmillo) {
-                        int contador = 0;
-                        vampiros[contador] = numero1;
-                        System.out.println("Los números vampiro son: " + numero1 + ".");
+                        vampiros[contador] = replicaParaOperarSinModificarNumero;
+                        System.out.println((contador +1) +": " + replicaParaOperarSinModificarNumero + " = " + colmillo1 + " X " + colmillo2 + ";");
                         contador++;
                     }
                 }
             }
         }
-
     }
 
     public static void main(String[] args) {
         SecuenciaFibonache secuencia = new SecuenciaFibonache();
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>secuencia Fibonnacci<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> secuencia Fibonnacci <<<<<<<<<<<<<<<<<<<<<<<<<");
         secuencia.Fibonnacci();
-        System.out.println("*>>>>>>>>>>>>>>>>>>>>>>>Ejemplo swich<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("*>>>>>>>>>>>>>>>>>>>>>>> Ejemplo swich <<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         secuencia.EjemploSwitch();
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>Números vampiro<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>> Los números vampiro son <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         secuencia.NumeroVampiro();
     }
 }
