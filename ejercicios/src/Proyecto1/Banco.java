@@ -1,5 +1,7 @@
 package Proyecto1;
 
+import ejercicios.EjerciciosVectores.Vectores;
+
 public class Banco {
     private Cliente cliente1, cliente2, cliente3;
 
